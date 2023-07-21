@@ -16,27 +16,40 @@
         label {
             padding-left: 2px;
             font-size: 20px;
+            margin-bottom: 6px;
         }
 
-        input {
-            margin: 6px 0 12px;
-            width: 300px;
-            padding: 12px 10px;
-            border: 2px solid $gray-color;
-            border-radius: 10px;
-            box-sizing: border-box;
-            transition: 300ms;
-            outline: none;
-            font-size: 16px;
+        div {
+            display: flex;
+            position: relative;
+            align-items: center;
 
-            &:focus {
-                border: 2px solid blue;
-                box-shadow: 5px 5px rgb(0 0 0 / 0.6);
+            input {
+                width: 300px;
+                padding: 12px 56px 12px 16px;
+                border: 2px solid $gray-color;
+                border-radius: 10px;
+                box-sizing: border-box;
+                transition: 300ms;
+                outline: none;
+                font-size: 16px;
+
+                &:focus {
+                    border: 2px solid blue;
+                    box-shadow: 5px 5px rgb(0 0 0 / 0.6);
+                }
+            }
+
+            .visibility-button {
+                position: absolute;
+                right: 16px;
+                display: flex;
             }
         }
     }
 
     .strength-sections-container {
+        margin-top: 12px;
         width: 96%;
         display: flex;
         justify-content: space-between;
