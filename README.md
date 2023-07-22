@@ -1,27 +1,99 @@
-# PasswordStrength
+# Password Strength
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
+<p align="center"><img src="https://drive.google.com/uc?export=view&id=1Wu-6gmaAeiHEOp8e6Jj5AVHO3RZrobDH"></p>
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Table of Contents
 
-## Code scaffolding
+-   [Description](#description)
+-   [Installation](#installation)
+-   [How To Launch In Browser](#how-to-launch-in-browser)
+-   [References](#references)
+-   [Author Info](#author-info)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[Back To The Top](#password-strength)
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Description
 
-## Running unit tests
+This is the result of running a test task for USENSE сompany.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### Task:
 
-## Running end-to-end tests
+Create application to test password strength.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#### The essence of the assignment:
 
-## Further help
+-   Create a field for entering a password, under the field add 3 sections which will show the strength of the password;
+-   Changes in password strength must take place in real time;
+-   How to calculate the strength of a password:
+    -   Only letters/digits/symbols - the password is easy;
+    -   Combination of letters-symbols/letters-digits/digits-symbols - the password is medium;
+    -   Has letters, symbols and numbers - the password is strong;
+-   The color of the sections will depend on the strength of the password:
+    -   If the field is empty, all sections are gray;
+    -   If the field has less than 8 characters, all sections are red;
+    -   If the password is easy - the first section is red the rest are gray;
+    -   If the password is medium - the first two sections are yellow the last one is gray;
+    -   If the password is strong, all sections are green;
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#### Technologies
+
+-   TypeScript
+-   Angular
+-   SCSS
+
+[Back To The Top](#password-strength)
+
+---
+
+## Installation
+
+This is the result of running a test task for USENSE сompany.
+
+#### Requirements
+
+-   Node.js
+-   npm
+
+#### Modules
+
+All you need to get started is to install node_modules. Go inside project folder and open Command Prompt. Type this to install modules:
+
+```console
+npm install
+```
+
+---
+
+## How To Launch In Browser
+
+To run the project in a browser, you need to have modules installed. Open terminal in project folder and run the following command:
+
+```console
+npm start
+```
+
+---
+
+## References
+
+### [USENSE](http://usense.com.ua/)
+
+### [TypeScript](https://www.typescriptlang.org/)
+
+### [Angular](https://angular.io/)
+
+### [SCSS](https://sass-lang.com/)
+
+[Back To The Top](#sugarcomics)
+
+---
+
+## Author Info
+
+LinkedIn - [Viacheslav Matvieiev](linkedin.com/in/viacheslav-matvieiev-87a554272)
+
+[Back To The Top](#password-strength)
