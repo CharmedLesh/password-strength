@@ -58,6 +58,7 @@
             width: 31.5%;
             height: 12px;
             background-color: $gray-color;
+            transition: 300ms ease-out;
 
             &:nth-child(1) {
                 border-top-left-radius: 10px;
@@ -67,6 +68,38 @@
             &:nth-child(3) {
                 border-top-right-radius: 10px;
                 border-bottom-right-radius: 10px;
+            }
+        }
+
+        &.small {
+            .strength-section {
+                background-color: red;
+            }
+        }
+
+        &.easy {
+            .strength-section {
+                &:nth-child(1) {
+                    background-color: red;
+                }
+            }
+        }
+
+        &.medium {
+            .strength-section {
+                &:nth-child(1) {
+                    background-color: #ecec00;
+                }
+
+                &:nth-child(2) {
+                    background-color: #ecec00;
+                }
+            }
+        }
+
+        &.strong {
+            .strength-section {
+                background-color: green;
             }
         }
     }
