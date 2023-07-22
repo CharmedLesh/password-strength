@@ -4,6 +4,8 @@
         <div>
             <input
                 [type]="inputType"
+                [ngModel]="password"
+                (ngModelChange)="onPasswordInputChange($event)"
                 id="pass"
                 name="password"
                 placeholder="Enter your password..."
