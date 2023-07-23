@@ -1,5 +1,11 @@
 # Password Strength
 
+#### Current version:
+
+<p align="center"><img src="https://drive.google.com/uc?export=view&id=1bcGJA-ih_yB_70tYyvzq0l_L50OyDAjb"></p>
+
+#### Old version (up to [555d1ac](https://github.com/CharmedLesh/password-strength/commit/555d1acfbf365da2f700004c06d51ef5f1ae80e6)):
+
 <p align="center"><img src="https://drive.google.com/uc?export=view&id=1Wu-6gmaAeiHEOp8e6Jj5AVHO3RZrobDH"></p>
 
 ---

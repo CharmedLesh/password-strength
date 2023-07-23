@@ -47,58 +47,63 @@
         }
     }
 
-    .strength-sections-container {
-        margin-top: 12px;
-        width: 96%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .strength-bar-container {
+        margin-top: 10px;
+        background-color: $gray-color;
+        width: 98%;
+        height: 12px;
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
 
-        .strength-section {
-            width: 31.5%;
-            height: 12px;
-            background-color: $gray-color;
-            transition: 300ms ease-out;
-
-            &:nth-child(1) {
-                border-top-left-radius: 10px;
-                border-bottom-left-radius: 10px;
-            }
-
-            &:nth-child(3) {
-                border-top-right-radius: 10px;
-                border-bottom-right-radius: 10px;
-            }
+        .strength-sections {
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(
+                90deg,
+                rgb(0 0 0 / 0) 0%,
+                rgb(0 0 0 / 0) 31.5%,
+                white 31.5%,
+                white 34.25%,
+                rgb(0 0 0 / 0) 34.25%,
+                rgb(0 0 0 / 0) 65.75%,
+                white 65.75%,
+                white 68.5%,
+                rgb(0 0 0 / 0) 68.5%,
+                rgb(0 0 0 / 0) 100%
+            );
         }
 
-        &.small {
-            .strength-section {
+        .strength-bar {
+            position: absolute;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            left: -100%;
+            transition: 300ms;
+
+            &.short {
+                left: 0%;
                 background-color: red;
             }
-        }
 
-        &.easy {
-            .strength-section {
-                &:nth-child(1) {
-                    background-color: red;
-                }
+            &.easy {
+                left: -68.5%;
+                background-color: red;
             }
-        }
 
-        &.medium {
-            .strength-section {
-                &:nth-child(1) {
-                    background-color: #ecec00;
-                }
-
-                &:nth-child(2) {
-                    background-color: #ecec00;
-                }
+            &.medium {
+                left: -34.25%;
+                background-color: yellow;
             }
-        }
 
-        &.strong {
-            .strength-section {
+            &.strong {
+                left: 0%;
                 background-color: green;
             }
         }

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
     inputType: 'text' | 'password' = 'password';
     password: string = '';
-    strength: 'empty' | 'small' | 'easy' | 'medium' | 'strong' = 'empty';
+    strength: 'empty' | 'short' | 'easy' | 'medium' | 'strong' = 'empty';
 
     visibilityButtonClick() {
         switch (this.inputType) {
@@ -26,7 +26,7 @@ export class AppComponent {
 
     getStrength(
         password: string
-    ): 'empty' | 'small' | 'easy' | 'medium' | 'strong' | 'error' {
+    ): 'empty' | 'short' | 'easy' | 'medium' | 'strong' | 'error' {
         //easy
         const onlyLettersRegex = /^[a-zA-Z]+$/;
         const onlyDigitsRegex = /^\d+$/;
@@ -48,7 +48,7 @@ export class AppComponent {
         }
 
         if (password.length < 8) {
-            return 'small';
+            return 'short';
         }
 
         if (
