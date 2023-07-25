@@ -1,0 +1,61 @@
+@import "../../../styles.scss";
+
+.strength-bar-container {
+    margin-top: 10px;
+    background-color: $gray-color;
+    width: 294px;
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+
+    .strength-sections {
+        @include full-size;
+        position: absolute;
+        z-index: 3;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(
+            90deg,
+            $transparent-color 0%,
+            $transparent-color 31.5%,
+            white 31.5%,
+            white 34.25%,
+            $transparent-color 34.25%,
+            $transparent-color 65.75%,
+            white 65.75%,
+            white 68.5%,
+            $transparent-color 68.5%,
+            $transparent-color 100%
+        );
+    }
+
+    .strength-bar {
+        position: absolute;
+        z-index: 2;
+        @include full-size;
+        left: -100%;
+        transition: 300ms;
+
+        &.short {
+            left: 0%;
+            background-color: red;
+        }
+
+        &.easy {
+            left: -68.5%;
+            background-color: red;
+        }
+
+        &.medium {
+            left: -34.25%;
+            background-color: yellow;
+        }
+
+        &.strong {
+            left: 0%;
+            background-color: green;
+        }
+    }
+}
