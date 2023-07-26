@@ -1,26 +1,54 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { PasswordStrengthService } from '../../services/password-strength.service';
+import { Component, OnDestroy, forwardRef } from '@angular/core';
+import {
+    ControlValueAccessor,
+    FormControl,
+    NG_VALUE_ACCESSOR,
+} from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-password-input',
     templateUrl: './password-input.component.html',
     styleUrls: ['./password-input.component.scss'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => PasswordInputComponent),
+            multi: true,
+        },
+    ],
 })
-export class PasswordInputComponent implements OnInit {
-    constructor(private passwordStrengthService: PasswordStrengthService) {}
-
+export class PasswordInputComponent implements ControlValueAccessor, OnDestroy {
     passwordControl = new FormControl<string>('');
     inputType: 'text' | 'password' = 'password';
 
-    ngOnInit() {
-        this.passwordControl.valueChanges.subscribe((value) => {
-            if (value) {
-                this.passwordStrengthService.updatePassword(value);
-            } else {
-                this.passwordStrengthService.updatePassword('');
-            }
-        });
+    private _onTouched = () => {};
+    private _onChangeSub!: Subscription;
+
+    ngOnDestroy(): void {
+        this._onChangeSub.unsubscribe();
+    }
+
+    writeValue(value: string): void {
+        if (value) {
+            this.passwordControl.setValue(value);
+        }
+    }
+
+    registerOnChange(fn: () => {}): void {
+        this._onChangeSub = this.passwordControl.valueChanges.subscribe(fn);
+    }
+
+    registerOnTouched(fn: () => {}): void {
+        this._onTouched = fn;
+    }
+
+    setDisabledState?(isDisabled: boolean): void {
+        if (isDisabled) {
+            this.passwordControl.disable();
+        } else {
+            this.passwordControl.enable();
+        }
     }
 
     visibilityButtonClick() {
